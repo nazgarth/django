@@ -1,0 +1,13 @@
+name: "Snyk scan"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+jobs:
+  analyze:
+    steps:
+    - name: Snyk
+      uses: snyk/actions@0.3.0
