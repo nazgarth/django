@@ -54,3 +54,12 @@ jobs:
           cache-dependency-path: '**/package.json'
       - run: npm install
       - run: npm test
+      
+  lamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Plant
+        uses: snyk/actions/python@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
